@@ -1,7 +1,18 @@
 import React, { useState } from 'react'
 import Thankyou from './Thankyou'
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { schema, schemaBase } from "../../schemas/yup"
 
-function Form({handleSubmit, register, errors, unregister, reset}) {
+function Form() {
+
+    const {
+        register,
+        unregister,
+        handleSubmit,
+        reset,
+        formState: { errors },
+      } = useForm({resolver: yupResolver(schema)})
 
     const [page, setPage] = useState(1)
 
