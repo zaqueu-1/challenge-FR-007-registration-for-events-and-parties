@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { schema, schemaBase } from "../schemas/yup"
 import Form from "./components/Form"
+import Bg from "./components/Bg"
 
 export default function Home() {
   
@@ -24,6 +25,7 @@ export default function Home() {
       </Head>
 
       <main>
+        <Bg />
         <Form 
           handleSubmit={handleSubmit}
           register={register}
